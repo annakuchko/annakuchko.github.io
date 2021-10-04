@@ -1,20 +1,20 @@
 ---
-title: "Teaching experience 1"
+title: "School of Risk Management"
 collection: teaching
-type: "Undergraduate course"
-permalink: /teaching/2014-spring-teaching-1
-venue: "University 1, Department"
-date: 2014-01-01
-location: "City, Country"
+type: "Company courses"
+permalink: /teaching/srm-teaching
+venue: "VTB Bank, "
+date: 2020-2021
+location: "Russia"
 ---
 
-This is a description of a teaching experience. You can use markdown like any other post.
+Mentored School of Risk Management students: checked assignments on Python, quantitative modelling, risk-management and finance, lectured and conducted seminars on ML and econometrics. Planed the course content and schedule
 
-Heading 1
+<!-- Heading 1
 ======
 
 Heading 2
 ======
 
 Heading 3
-======
+====== -->

@@ -4,7 +4,7 @@ collection: teaching
 type: "Company courses"
 permalink: /teaching/srm-teaching
 venue: "VTB Bank"
-date: 2020-2021
+date: 01/03/2021
 location: "Russia"
 ---
 

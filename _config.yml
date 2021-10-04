@@ -7,7 +7,7 @@
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Anna Kuchko"
+title                    : "About"
 title_separator          : "-"
 name                     : &name "Anna Kuchko"
 description              : &description "personal description"

@@ -86,7 +86,7 @@ author:
   location         : "Coventry, UK"
   employer         :
 #   googlescholar    : "http://yourfullgooglescholarurl.com"
-  email            : anna (dot) kuchko (at) warwick (dot) ac (dot) uk
+  email            : anna.kuchko (at) warwick (dot) ac (dot) uk
 #   researchgate     :  # example: "https://www.researchgate.net/profile/yourprofile"
   uri              :
   bitbucket        :
@@ -101,7 +101,7 @@ author:
   instagram        :
   impactstory      : #"https://profiles.impactstory.org/u/xxxx-xxxx-xxxx-xxxx"
   lastfm           :
-  linkedin         :
+  linkedin         : "https://www.linkedin.com/in/annakuchko"
 #   orcid            : "http://orcid.org/yourorcidurl"
   pinterest        :
   soundcloud       :
@@ -175,10 +175,10 @@ kramdown:
 # Collections
 collections:
   teaching:
-    output: true
+    output: false
     permalink: /:collection/:path/
   publications:
-    output: true
+    output: false
     permalink: /:collection/:path/
   portfolio:
     output: true

@@ -1,6 +1,6 @@
 ---
 permalink: /
-title: Anna Kuchko
+title: About
 excerpt: "About me"
 author_profile: true
 redirect_from: 
@@ -8,11 +8,11 @@ redirect_from:
   - /about.html
 ---
 
-I am a first year MPhil/PhD student in Warwick Maths and Stats Centres of Doctoral Training (CDT)
+I am a first year MPhil/PhD student @ UoWarwick Maths and Stats Centres of Doctoral Training (CDT)
 
 Reasearch Interests
 ======
-My main area of research interests is concerned with multivariate statistics, particularly networks analysis, networks clustering, and graph neural networks
+My main area of research interests is concerned with multivariate statistics, particularly networks analysis, networks clustering, and graph neural networks:
 * Time-series analysis (high-frequency modelling, clustering)
 * Financial networks clustering for portfolio optimisation
 * Clustering algorithms for improved predictions

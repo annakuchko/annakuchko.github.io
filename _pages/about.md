@@ -8,7 +8,7 @@ redirect_from:
   - /about.html
 ---
 
-I am a tird year MPhil/PhD student @ UoWarwick Maths and Stats Centres of Doctoral Training (CDT). My work is mainly focused on the problems of optimal stopping and reinforcement learning with an unknown gain function.
+I am a third year MPhil/PhD student @ UoWarwick Maths and Stats Centres of Doctoral Training (CDT). My work is mainly focused on the problems of optimal stopping and reinforcement learning with an unknown gain function.
 In my 1st year project I explored how Reservoir Computing (a state-space systems which can be thought of as a type of Recurrent Neural Networks) can be applied to Reinforcement Learning. The project was supervised by Dr Lyudmila GrigoryevaLink opens in a new window and Dr Nick TawnLink opens in a new window.
 
 Reasearch Interests

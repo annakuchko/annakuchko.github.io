@@ -82,11 +82,11 @@ analytics:
 author:
   name             : "Anna Kuchko"
   avatar           : "profile.png" 
-  bio              : "1st year MPhil/PhD in Statistics @ UoWarwick"
-  location         : "Coventry, UK"
+  bio              : "AI/ML Researh Scientist and a final year PhD in Statistics @ UoWarwick"
+  location         : "Leamington Spa, UK"
   employer         :
 #   googlescholar    : "http://yourfullgooglescholarurl.com"
-  email            : anna.kuchko (at) warwick (dot) ac (dot) uk
+  email            : anna.kuchko (at) yandex (dot) com
 #   researchgate     :  # example: "https://www.researchgate.net/profile/yourprofile"
   uri              :
   bitbucket        :
@@ -175,7 +175,7 @@ kramdown:
 # Collections
 collections:
   teaching:
-    output: true
+    output: false
     permalink: /:collection/:path/
   publications:
     output: false

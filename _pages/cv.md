@@ -8,7 +8,7 @@ redirect_from:
 ---
 
 {% include base_path %}
-My full CV can be found [here](https://link-to-cv12345).
+My full CV can be found [here](https://github.com/annakuchko/annakuchko.github.io/blob/master/files/CV%20Anna%20Kuchko%201p.pdf).
 
 Education
 ======

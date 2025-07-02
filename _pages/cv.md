@@ -6,6 +6,19 @@ author_profile: true
 redirect_from:
   - /resume
 ---
+ <!DOCTYPE html>
+
+    <html lang="en" xmlns="https://raw.githubusercontent.com/annakuchko/annakuchko.github.io/master/files/CV%20Anna%20Kuchko.htm">
+    <head>
+        <title>Welcome</title>
+    </head>
+    <body>
+        <h1>Django Site</h1>
+        <hr />
+        <p>Thanks for visiting.</p>
+    </body>
+    </html>
+    
 <div style="border: 1px solid #ccc; padding: 10px;">
   <p>This is HTML inside Markdown.</p>
   <iframe src="https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/annakuchko/annakuchko.github.io/master/files/CV%20Anna%20Kuchko.htm" width="100%" height="600px"></iframe>

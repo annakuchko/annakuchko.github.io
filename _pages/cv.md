@@ -10,11 +10,12 @@ redirect_from:
 {% include base_path %}
 My full CV can be found [here](https://github.com/annakuchko/annakuchko.github.io/blob/master/files/CV%20Anna%20Kuchko%201p.pdf).
 
-<object data="https://github.com/annakuchko/annakuchko.github.io/blob/master/files/CV%20Anna%20Kuchko%201p.pdf" type="application/pdf" width="700px" height="700px">
-    <embed src="(https://github.com/annakuchko/annakuchko.github.io/blob/master/files/CV%20Anna%20Kuchko%201p.pdf">
-        <p>This browser does not support PDFs. Please download the PDF to view it: <a href="http://yoursite.com/the.pdf">Download PDF</a>.</p>
-    </embed>
-</object>
+<iframe
+  src="https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/annakuchko/annakuchko.github.io/master/files/CV%20Anna%20Kuchko%201p.pdf"
+  width="100%"
+  height="600px"
+  style="border: none;">
+</iframe>
 
 Education
 ======

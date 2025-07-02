@@ -8,7 +8,7 @@ redirect_from:
 ---
 <div style="border: 1px solid #ccc; padding: 10px;">
   <p>This is HTML inside Markdown.</p>
-  <iframe src="https://github.com/annakuchko/annakuchko.github.io/blob/master/files/CV%20Anna%20Kuchko.htm" width="100%" height="600px"></iframe>
+  <iframe src="https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/annakuchko/annakuchko.github.io/master/files/CV%20Anna%20Kuchko.htm" width="100%" height="600px"></iframe>
 </div>
 
 <iframe

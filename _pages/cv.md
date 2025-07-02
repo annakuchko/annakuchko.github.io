@@ -9,6 +9,7 @@ redirect_from:
 
 {% include base_path %}
 My full CV can be found [here](https://github.com/annakuchko/annakuchko.github.io/blob/master/files/CV%20Anna%20Kuchko%201p.pdf).
+<object data="[myfile.pdf](https://github.com/annakuchko/annakuchko.github.io/blob/master/files/CV%20Anna%20Kuchko%201p.pdf)" width="1000" height="1000" type='application/pdf'/>
 
 Education
 ======

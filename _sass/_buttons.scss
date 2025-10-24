@@ -11,7 +11,7 @@
   display: inline-block;
   margin-bottom: 0.25em;
   padding: 0.5em 1em;
-  color: #fff !important;
+  color: $primary-contrast-color !important;
   font-family: $sans-serif;
   font-size: $type-size-6;
   font-weight: bold;
@@ -21,9 +21,22 @@
   border: 0 !important;
   border-radius: $border-radius;
   cursor: pointer;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.15s ease;
 
-  &:hover {
-    background-color: mix(white, #000, 20%);
+  &:hover,
+  &:focus {
+    background-color: darken($primary-color, 7%);
+    color: $primary-contrast-color !important;
+  }
+
+  &:focus {
+    outline: 2px solid lighten($primary-color, 15%);
+    outline-offset: 2px;
+  }
+
+  &:active {
+    background-color: darken($primary-color, 12%);
+    transform: translateY(1px);
   }
 
   .icon {
@@ -48,21 +61,30 @@
   /* for dark backgrounds */
 
   &--inverse {
-    color: $gray !important;
-    border: 1px solid $light-gray !important; /* override*/
-    background-color: #fff;
+    color: $secondary-contrast-color !important;
+    border: 1px solid $neutral-color !important; /* override*/
+    background-color: $neutral-color;
 
-    &:hover {
-      color: #fff !important;
-      border-color: $gray;
+    &:hover,
+    &:focus {
+      color: $primary-contrast-color !important;
+      border-color: darken($neutral-color, 10%);
+      background-color: darken($neutral-color, 6%);
     }
   }
 
   /* light outline */
 
   &--light-outline {
-    border: 1px solid #fff !important; /* override*/
+    border: 1px solid $primary-color !important; /* override*/
+    color: $primary-color !important;
     background-color: transparent;
+
+    &:hover,
+    &:focus {
+      color: $primary-contrast-color !important;
+      background-color: $primary-color;
+    }
   }
 
   /* information */
@@ -70,8 +92,9 @@
   &--info {
     background-color: $info-color;
 
-    &:hover {
-      background-color: mix(#000, $info-color, 20%);
+    &:hover,
+    &:focus {
+      background-color: darken($info-color, 7%);
     }
   }
 
@@ -79,9 +102,12 @@
 
   &--warning {
     background-color: $warning-color;
+    color: $secondary-contrast-color !important;
 
-    &:hover {
-      background-color: mix(#000, $warning-color, 20%);
+    &:hover,
+    &:focus {
+      background-color: darken($warning-color, 7%);
+      color: $secondary-contrast-color !important;
     }
   }
 
@@ -89,9 +115,12 @@
 
   &--success {
     background-color: $success-color;
+    color: $secondary-contrast-color !important;
 
-    &:hover {
-      background-color: mix(#000, $success-color, 20%);
+    &:hover,
+    &:focus {
+      background-color: darken($success-color, 7%);
+      color: $secondary-contrast-color !important;
     }
   }
 
@@ -100,8 +129,9 @@
   &--danger {
     background-color: $danger-color;
 
-    &:hover {
-      background-color: mix(#000, $danger-color, 20%);
+    &:hover,
+    &:focus {
+      background-color: darken($danger-color, 7%);
     }
   }
 
@@ -127,8 +157,9 @@
     &--#{$socialnetwork} {
       background-color: $color;
 
-      &:hover {
-        background-color: mix(#000, $color, 20%);
+      &:hover,
+      &:focus {
+        background-color: darken($color, 7%);
       }
     }
   }

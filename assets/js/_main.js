@@ -95,4 +95,37 @@ $(document).ready(function(){
     midClick: true // allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source.
   });
 
+  // Scroll reveal animations
+  var $revealItems = $(".reveal-on-scroll");
+  if ($revealItems.length) {
+    var prefersReducedMotion = window.matchMedia ? window.matchMedia("(prefers-reduced-motion: reduce)") : { matches: false };
+
+    if (prefersReducedMotion.matches) {
+      $revealItems.addClass("is-visible");
+    } else if ("IntersectionObserver" in window) {
+      var revealObserver = new IntersectionObserver(function(entries, observer) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        rootMargin: "0px 0px -10% 0px",
+        threshold: 0.15
+      });
+
+      $revealItems.each(function(index, element) {
+        var delay = element.getAttribute("data-reveal-delay");
+        if (!delay) {
+          delay = (Math.min(index, 12) * 0.06).toFixed(2) + "s";
+        }
+        element.style.transitionDelay = delay;
+        revealObserver.observe(element);
+      });
+    } else {
+      $revealItems.addClass("is-visible");
+    }
+  }
+
 });

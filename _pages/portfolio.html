@@ -1,14 +1,45 @@
 ---
 layout: archive
-title: "Portfolio"
-permalink: /portfolio/
+title: "Projects"
+permalink: /projects/
+redirect_from:
+  - /portfolio/
 author_profile: true
 ---
 
 {% include base_path %}
 
 
-{% for post in site.portfolio %}
-  {% include archive-single.html %}
-{% endfor %}
+<section class="page__section" aria-labelledby="projects-work-section">
+  <header class="page__section-header reveal-on-scroll">
+    <h2 id="projects-work-section" class="page__section-title">Projects</h2>
+    <p class="page__section-lede">Selected research, prototypes, and collaborations that I have worked on.</p>
+  </header>
+
+  <div class="page__section-body">
+    <div class="grid__wrapper">
+      {% for post in site.portfolio %}
+        {% include archive-single.html type="grid" %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% assign blog_posts = site.posts | where_exp: "post", "post.published != false" %}
+{% if blog_posts.size > 0 %}
+  <section class="page__section" aria-labelledby="projects-blog-section">
+    <header class="page__section-header reveal-on-scroll">
+      <h2 id="projects-blog-section" class="page__section-title">Blog Posts</h2>
+      <p class="page__section-lede">Writing, notes, and updates from the blog now live alongside the project work.</p>
+    </header>
+
+    <div class="page__section-body page__section-body--list">
+      <div class="list__wrapper">
+        {% for post in blog_posts %}
+          {% include archive-single.html type="list" %}
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+{% endif %}
 

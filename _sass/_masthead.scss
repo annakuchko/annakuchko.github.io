@@ -11,14 +11,34 @@
           animation-delay: 0.15s;
   z-index: 20;
 
+  &__accent {
+    background: linear-gradient(135deg, mix(#fff, $primary-color, 85%), mix(#fff, $primary-color, 65%));
+    padding: 0.75rem 0;
+
+    @include breakpoint($medium) {
+      padding: 1rem 0;
+    }
+
+    @include breakpoint($large) {
+      padding: 0.5rem 0;
+    }
+  }
+
   &__inner-wrap {
     @include container;
     @include clearfix;
-    padding: 1em 1em 1em;
+    padding: 0 1.25rem;
     font-family: $sans-serif-narrow;
+
+    @include breakpoint($medium) {
+      padding-left: 1.75rem;
+      padding-right: 1.75rem;
+    }
 
     @include breakpoint($x-large) {
       max-width: $x-large;
+      padding-left: 2rem;
+      padding-right: 2rem;
     }
 
     nav {

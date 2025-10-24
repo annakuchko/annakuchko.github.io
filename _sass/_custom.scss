@@ -11,6 +11,8 @@
   --surface-soft: rgba(1, 3, 24, 0.64);
 }
 
+$high-contrast-text: mix(#fff, $text-color, 65%);
+
 html {
   scroll-behavior: smooth;
   background: radial-gradient(circle at 0% -10%, rgba(135, 240, 173, 0.2), transparent 45%),
@@ -22,7 +24,7 @@ html {
 body {
   min-height: 100vh;
   background: transparent;
-  color: $text-color;
+  color: $high-contrast-text;
   line-height: 1.7;
 }
 
@@ -72,7 +74,7 @@ body::after {
 .masthead__menu-item a,
 .site-nav .page-link {
   position: relative;
-  color: $text-color;
+  color: $high-contrast-text;
   transition: color 0.25s ease, transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -94,7 +96,7 @@ body::after {
 .masthead__menu-item a:focus,
 .site-nav .page-link:hover,
 .site-nav .page-link:focus {
-  color: lighten($text-color, 6%);
+  color: lighten($high-contrast-text, 6%);
   transform: translateY(-1px);
 }
 
@@ -109,7 +111,7 @@ body::after {
 .page__meta,
 .archive__item-title,
 .archive__item-excerpt {
-  color: $text-color;
+  color: $high-contrast-text;
 }
 
 .page__inner-wrap,
@@ -158,7 +160,7 @@ body::after {
 }
 
 .archive__item-title a {
-  color: lighten($text-color, 8%);
+  color: lighten($high-contrast-text, 6%);
   transition: color 0.3s ease, text-shadow 0.4s ease;
 }
 
@@ -174,20 +176,24 @@ body::after {
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
               box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1),
               background-color 0.2s ease;
+  font-weight: 600;
+  letter-spacing: 0.02em;
 }
 
 .btn--primary {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7));
-  color: #0b101f;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(226, 232, 240, 0.95));
+  color: #020617;
   border: none;
   box-shadow: 0 18px 46px rgba(117, 107, 255, 0.35);
+  text-shadow: 0 2px 8px rgba(15, 23, 42, 0.2);
 }
 
 .btn--inverse {
-  background: rgba(255, 255, 255, 0.06);
-  color: rgba(255, 255, 255, 0.85);
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.14);
+  color: rgba(255, 255, 255, 0.96);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+  text-shadow: 0 2px 8px rgba(15, 23, 42, 0.35);
 }
 
 .btn:hover,
@@ -243,13 +249,14 @@ blockquote {
 .page__section-title {
   margin-bottom: 0.75rem;
   font-size: clamp(2.25rem, 3vw, 3rem);
-  color: lighten($primary-color, 8%);
+  color: lighten($high-contrast-text, 8%);
+  text-shadow: 0 6px 24px rgba(#020617, 0.4);
 }
 
 .page__section-lede {
   margin: 0;
   font-size: 1.05rem;
-  color: mix($text-color, $darker-gray, 75%);
+  color: mix($high-contrast-text, #fff, 35%);
 }
 
 .page__section-body {
@@ -263,7 +270,7 @@ blockquote {
 }
 
 .page__section-body .grid__wrapper {
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
 }
 
 .page__section-body--list .list__wrapper {

@@ -16,38 +16,16 @@ author_profile: true
   {% assign contact_href = contact_target | relative_url %}
 {% endif %}
 
-<section class="projects-hero">
-  <div class="projects-hero__inner">
-    <div class="projects-hero__content reveal-on-scroll" data-reveal-delay="0s">
-      <p class="projects-hero__eyebrow">Splashes of work</p>
-      <h1 class="projects-hero__title">Projects &amp; Writings awash in color</h1>
-      <p class="projects-hero__lede">A living collection of prototypes, collaborations, and reflections. Dive in to explore interactive experiments, thoughtful research, and the stories behind them.</p>
-      <div class="projects-hero__cta">
-        <a class="btn btn--primary" href="{{ contact_href }}">Get in touch</a>
-        <a class="btn btn--inverse" href="{{ '/cv/' | relative_url }}">View full CV</a>
-      </div>
-    </div>
-
-    <div class="projects-hero__visual" aria-hidden="true">
-      <div class="projects-hero__orb projects-hero__orb--one"></div>
-      <div class="projects-hero__orb projects-hero__orb--two"></div>
-      <div class="projects-hero__orb projects-hero__orb--three"></div>
-    </div>
-  </div>
-</section>
-
-<section class="page__section page__section--projects" aria-labelledby="projects-work-section">
-  <header class="page__section-header reveal-on-scroll" data-reveal-delay="0.1s">
-    <p class="page__section-eyebrow">Projects</p>
-    <h2 id="projects-work-section" class="page__section-title">Experiments &amp; collaborations</h2>
-    <p class="page__section-lede">Selected research, prototypes, and partnerships that explore playful interactions and thoughtful storytelling.</p>
+<section class="page__section" aria-labelledby="projects-work-section">
+  <header class="page__section-header reveal-on-scroll">
+    <h2 id="projects-work-section" class="page__section-title">Projects</h2>
+    <p class="page__section-lede">Selected research, prototypes, and collaborations that I have worked on.</p>
   </header>
 
   <div class="page__section-body">
     <div class="grid__wrapper">
       {% for post in site.portfolio %}
-        {% capture reveal_delay %}{{ forloop.index0 | times: 80 }}ms{% endcapture %}
-        {% include archive-single.html type="grid" data_reveal_delay=reveal_delay %}
+        {% include archive-single.html type="grid" %}
       {% endfor %}
     </div>
   </div>
@@ -55,18 +33,16 @@ author_profile: true
 
 {% assign blog_posts = site.posts | where_exp: "post", "post.published != false" %}
 {% if blog_posts.size > 0 %}
-  <section class="page__section page__section--writing" aria-labelledby="projects-blog-section">
-    <header class="page__section-header reveal-on-scroll" data-reveal-delay="0.1s">
-      <p class="page__section-eyebrow">Writing</p>
-      <h2 id="projects-blog-section" class="page__section-title">Notes from the studio</h2>
-      <p class="page__section-lede">Process snapshots, design scribbles, and reflections gathered alongside the project work.</p>
+  <section class="page__section" aria-labelledby="projects-blog-section">
+    <header class="page__section-header reveal-on-scroll">
+      <h2 id="projects-blog-section" class="page__section-title">Blog Posts</h2>
+      <p class="page__section-lede">Writing, notes, and updates from the blog now live alongside the project work.</p>
     </header>
 
     <div class="page__section-body page__section-body--list">
       <div class="list__wrapper">
         {% for post in blog_posts %}
-          {% capture reveal_delay %}{{ forloop.index0 | times: 70 }}ms{% endcapture %}
-          {% include archive-single.html type="list" data_reveal_delay=reveal_delay %}
+          {% include archive-single.html type="list" %}
         {% endfor %}
       </div>
     </div>

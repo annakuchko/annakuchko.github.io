@@ -128,43 +128,4 @@ $(document).ready(function(){
     }
   }
 
-  // Projects hero parallax orbs
-  var hero = document.querySelector(".projects-hero");
-  if (hero && window.matchMedia && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-    var heroOrbs = hero.querySelectorAll(".projects-hero__orb");
-    var heroRect = null;
-    var strength = 22;
-
-    var updateRect = function() {
-      heroRect = hero.getBoundingClientRect();
-    };
-
-    var handlePointer = function(event) {
-      if (!heroRect) {
-        updateRect();
-      }
-      var x = (event.clientX - heroRect.left) / heroRect.width - 0.5;
-      var y = (event.clientY - heroRect.top) / heroRect.height - 0.5;
-
-      heroOrbs.forEach(function(orb, index) {
-        var depth = (index + 1) / heroOrbs.length;
-        var translateX = (x * strength * depth).toFixed(2);
-        var translateY = (y * strength * depth).toFixed(2);
-        orb.style.transform = "translate3d(" + translateX + "px, " + translateY + "px, 0)";
-      });
-    };
-
-    var resetPointer = function() {
-      heroOrbs.forEach(function(orb) {
-        orb.style.transform = "";
-      });
-    };
-
-    hero.addEventListener("pointermove", handlePointer);
-    hero.addEventListener("pointerleave", resetPointer);
-    window.addEventListener("resize", function() {
-      heroRect = null;
-    });
-  }
-
 });

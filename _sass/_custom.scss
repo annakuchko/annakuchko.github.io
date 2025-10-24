@@ -6,6 +6,11 @@
   color-scheme: dark;
 }
 
+html {
+  scroll-behavior: smooth;
+  background-color: $body-color;
+}
+
 body {
   background-color: $body-color;
   color: $text-color;
@@ -168,6 +173,97 @@ blockquote {
   background: rgba($background-color, 0.7);
 }
 
+.page__section {
+  margin: 4rem 0;
+  position: relative;
+  z-index: 0;
+}
+
+.page__section:first-of-type {
+  margin-top: 2rem;
+}
+
+.page__section-header {
+  max-width: 60ch;
+  margin-bottom: 2.5rem;
+}
+
+.page__section-title {
+  margin-bottom: 0.75rem;
+  font-size: clamp(2.25rem, 3vw, 3rem);
+  color: lighten($primary-color, 8%);
+}
+
+.page__section-lede {
+  margin: 0;
+  font-size: 1.05rem;
+  color: mix($text-color, $darker-gray, 75%);
+}
+
+.page__section-body {
+  position: relative;
+}
+
+.page__section-body .grid__wrapper,
+.page__section-body .list__wrapper {
+  display: grid;
+  gap: 2.5rem;
+}
+
+.page__section-body .grid__wrapper {
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.page__section-body--list .list__wrapper {
+  grid-template-columns: 1fr;
+}
+
+@media (max-width: $medium) {
+  .page__section {
+    margin: 3rem 0;
+  }
+
+  .page__section-header {
+    margin-bottom: 2rem;
+  }
+
+  .page__section-title {
+    font-size: clamp(2rem, 6vw, 2.5rem);
+  }
+}
+
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(32px) scale(0.98);
+  transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+input,
+textarea,
+select,
+.form-control {
+  background-color: mix($background-color, $lighter-gray, 60%);
+  border: 1px solid rgba($dark-gray, 0.35);
+  color: lighten($text-color, 8%);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus,
+textarea:focus,
+select:focus,
+.form-control:focus {
+  border-color: lighten($primary-color, 10%);
+  box-shadow: 0 0 0 3px rgba($primary-color, 0.25);
+  color: lighten($text-color, 10%);
+}
+
 .cv-viewer {
   display: grid;
   gap: 1.5rem;
@@ -222,8 +318,13 @@ blockquote {
   .archive__item,
   .btn,
   .masthead__menu-item a,
-  .site-nav .page-link {
+  .site-nav .page-link,
+  .reveal-on-scroll {
     transform: none !important;
     box-shadow: none !important;
+  }
+
+  .reveal-on-scroll {
+    opacity: 1 !important;
   }
 }

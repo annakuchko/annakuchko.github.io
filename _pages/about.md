@@ -1,10 +1,10 @@
 ---
-permalink: /
+permalink: /about/
 title: About
 excerpt: "About me"
 author_profile: true
-redirect_from: 
-  - /about/
+redirect_from:
+  - /
   - /about.html
 ---
 Hi! My name is Anna and I am and aspiring ML/AI researcher and the final year MPhil/PhD student @ UoWarwick Maths and Stats Centres of Doctoral Training (CDT). My work is mainly focused on the problems of solving inverse optimal stopping problems (think of teaching self-driving cars to react and stop in hazadous situations).

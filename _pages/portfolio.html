@@ -9,6 +9,12 @@ author_profile: true
 
 {% include base_path %}
 
+{% assign contact_target = site.contact | default: '/about/' %}
+{% if contact_target contains '://' or contact_target contains 'mailto:' %}
+  {% assign contact_href = contact_target %}
+{% else %}
+  {% assign contact_href = contact_target | relative_url %}
+{% endif %}
 
 <section class="page__section" aria-labelledby="projects-work-section">
   <header class="page__section-header reveal-on-scroll">

@@ -284,6 +284,62 @@ body:hover .visually-hidden button {
   }
 }
 
+/*
+   Accent backgrounds & badges
+   ========================================================================== */
+
+.bg-primary {
+  display: block;
+  padding: 0.75rem 1rem;
+  color: $primary-contrast-color;
+  background-color: $primary-color;
+  border-radius: $border-radius;
+}
+
+.bg-secondary {
+  display: block;
+  padding: 0.75rem 1rem;
+  color: $secondary-contrast-color;
+  background-color: $secondary-color;
+  border-radius: $border-radius;
+}
+
+.bg-neutral {
+  display: block;
+  padding: 0.75rem 1rem;
+  color: $neutral-contrast-color;
+  background-color: $neutral-color;
+  border-radius: $border-radius;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-radius: $border-radius;
+}
+
+.badge--primary {
+  color: $primary-contrast-color;
+  background-color: $primary-color;
+}
+
+.badge--secondary {
+  color: $secondary-contrast-color;
+  background-color: $secondary-color;
+}
+
+.badge--neutral {
+  color: $neutral-contrast-color;
+  background-color: $neutral-color;
+}
+
 
 /*
    Navicons

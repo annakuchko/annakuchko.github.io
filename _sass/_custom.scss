@@ -1,0 +1,229 @@
+/* ==========================================================================
+   Custom dark theme and motion enhancements
+   ========================================================================== */
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  background-color: $body-color;
+  color: $text-color;
+  line-height: 1.7;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at 20% 20%, rgba(56, 189, 248, 0.12), transparent 45%),
+              radial-gradient(circle at 80% 10%, rgba(249, 115, 22, 0.08), transparent 55%),
+              radial-gradient(circle at 50% 80%, rgba(56, 189, 248, 0.06), transparent 65%);
+  z-index: -2;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  backdrop-filter: blur(60px);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.masthead,
+.page__footer,
+.page__content,
+.sidebar,
+.pagination,
+.notice--primary,
+.notice--info {
+  background-color: rgba($background-color, 0.9);
+  border-color: rgba($dark-gray, 0.18);
+  box-shadow: 0 20px 60px rgba(#000, 0.35);
+}
+
+.masthead {
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba($dark-gray, 0.3);
+}
+
+.masthead__menu-item a,
+.site-nav .page-link {
+  position: relative;
+  color: $text-color;
+  transition: color 0.25s ease, transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.masthead__menu-item a::after,
+.site-nav .page-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -0.35rem;
+  height: 2px;
+  background: linear-gradient(90deg, rgba($primary-color, 0.0), rgba($primary-color, 0.8), rgba($secondary-color, 0.0));
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.masthead__menu-item a:hover,
+.masthead__menu-item a:focus,
+.site-nav .page-link:hover,
+.site-nav .page-link:focus {
+  color: lighten($text-color, 6%);
+  transform: translateY(-1px);
+}
+
+.masthead__menu-item a:hover::after,
+.masthead__menu-item a:focus::after,
+.site-nav .page-link:hover::after,
+.site-nav .page-link:focus::after {
+  transform: scaleX(1);
+}
+
+.page__title,
+.page__meta,
+.archive__item-title,
+.archive__item-excerpt {
+  color: $text-color;
+}
+
+.page__inner-wrap,
+.archive__item,
+.feature__wrapper,
+.card,
+.highlighter-rouge,
+.highlight {
+  background: rgba($background-color, 0.92);
+  border: 1px solid rgba($dark-gray, 0.18);
+  border-radius: 18px;
+  box-shadow: 0 25px 70px rgba(#000, 0.45);
+  transition: $global-transition;
+}
+
+.archive__item {
+  padding: 1.5rem;
+  transform: translateY(0);
+}
+
+.archive__item:hover,
+.archive__item:focus-within {
+  transform: translateY(-6px);
+  box-shadow: 0 32px 90px rgba(#000, 0.55);
+}
+
+.archive__item-title a {
+  color: lighten($text-color, 4%);
+  transition: color 0.3s ease;
+}
+
+.archive__item-title a:hover,
+.archive__item-title a:focus {
+  color: lighten($primary-color, 15%);
+}
+
+.btn,
+.btn--primary,
+.btn--inverse {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              background-color 0.2s ease;
+}
+
+.btn:hover,
+.btn:focus,
+.btn--primary:hover,
+.btn--primary:focus,
+.btn--inverse:hover,
+.btn--inverse:focus {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 40px rgba($primary-color, 0.35);
+}
+
+a {
+  color: $link-color;
+  transition: color 0.3s ease, text-shadow 0.4s ease;
+}
+
+a:hover,
+a:focus {
+  color: lighten($link-color, 12%);
+  text-shadow: 0 0 12px rgba($primary-color, 0.35);
+}
+
+pre,
+code,
+.highlight {
+  background-color: $code-background-color;
+  border-color: rgba($dark-gray, 0.25);
+  color: lighten($text-color, 4%);
+}
+
+blockquote {
+  border-left-color: rgba($primary-color, 0.5);
+  color: lighten($text-color, 12%);
+  background: rgba($background-color, 0.7);
+}
+
+.cv-viewer {
+  display: grid;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.cv-viewer__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.cv-viewer__frame {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 30px 80px rgba(#000, 0.45);
+}
+
+.cv-viewer__frame iframe {
+  width: 100%;
+  height: min(80vh, 900px);
+  border: none;
+  background: rgba($background-color, 0.95);
+}
+
+@supports ((-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px))) {
+  .masthead,
+  .page__footer,
+  .page__content,
+  .sidebar,
+  .archive__item {
+    backdrop-filter: blur(18px);
+  }
+}
+
+@media (max-width: $medium) {
+  .archive__item {
+    padding: 1.25rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .archive__item,
+  .btn,
+  .masthead__menu-item a,
+  .site-nav .page-link {
+    transform: none !important;
+    box-shadow: none !important;
+  }
+}

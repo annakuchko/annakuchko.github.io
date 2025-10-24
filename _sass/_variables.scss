@@ -47,25 +47,25 @@ $type-size-8                : 0.625em;  // ~10px
    Colors
    ========================================================================== */
 
-$gray                       : #94a3b8;
-$dark-gray                  : #475569;
-$darker-gray                : #1f2933;
-$light-gray                 : #cbd5e1;
-$lighter-gray               : #e2e8f0;
+$gray                       : #1f2937;
+$dark-gray                  : #94a3b8;
+$darker-gray                : #e2e8f0;
+$light-gray                 : #0f172a;
+$lighter-gray               : #1e293b;
 
-$body-color                 : #ffffff;
-$background-color           : #f8fafc;
-$code-background-color      : #f1f5f9;
-$code-background-color-dark : $light-gray;
+$body-color                 : #0b1120;
+$background-color           : #111827;
+$code-background-color      : #1f2937;
+$code-background-color-dark : #0d1526;
 $text-color                 : $darker-gray;
-$border-color               : $lighter-gray;
+$border-color               : rgba(148, 163, 184, 0.24);
 
-$primary-color              : #1e3a8a;
+$primary-color              : #38bdf8;
 $secondary-color            : #f97316;
-$neutral-color              : #e2e8f0;
-$primary-contrast-color     : #ffffff;
+$neutral-color              : #1f2937;
+$primary-contrast-color     : #020817;
 $secondary-contrast-color   : #0f172a;
-$neutral-contrast-color     : #1f2933;
+$neutral-contrast-color     : #e2e8f0;
 
 $success-color              : #16a34a;
 $warning-color              : #f59e0b;
@@ -156,4 +156,4 @@ $border-radius              : 4px;
 $box-shadow                 : 0 1px 1px rgba(0, 0, 0, 0.125);
 $navicon-width              : 28px;
 $navicon-height             : 4px;
-$global-transition          : all 0.2s ease-in-out;
+$global-transition          : all 0.35s cubic-bezier(0.4, 0, 0.2, 1);

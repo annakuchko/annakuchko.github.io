@@ -175,7 +175,12 @@
 .greedy-nav {
   position: relative;
   min-width: 250px;
-  background: $background-color;
+  background: linear-gradient(135deg, rgba(12, 18, 40, 0.78), rgba(6, 10, 26, 0.52));
+  border: 1px solid rgba($primary-color, 0.2);
+  border-radius: 18px;
+  box-shadow: 0 24px 60px rgba(#050b20, 0.42);
+  backdrop-filter: blur(24px) saturate(135%);
+  overflow: hidden;
 
   a {
     display: block;

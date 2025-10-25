@@ -348,6 +348,78 @@ blockquote {
   margin-right: auto;
 }
 
+.sidebar .author__urls-wrapper {
+  width: 100%;
+}
+
+.sidebar .author__urls {
+  margin-top: clamp(1rem, 2vw, 1.35rem);
+  padding: clamp(0.85rem, 2vw, 1.15rem) clamp(1rem, 2.2vw, 1.5rem);
+  border-radius: 20px;
+  border: 1px solid rgba(135, 240, 173, 0.28);
+  background: linear-gradient(140deg, rgba(12, 18, 46, 0.82), rgba(14, 28, 56, 0.68));
+  box-shadow: 0 22px 55px rgba(#050b20, 0.55), inset 0 0 0 1px rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(24px) saturate(140%);
+  text-align: left;
+  z-index: 5;
+}
+
+.sidebar .author__urls::before {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  border-radius: inherit;
+  background: radial-gradient(circle at 12% 16%, rgba(135, 240, 173, 0.14), transparent 55%),
+              radial-gradient(circle at 85% 22%, rgba(255, 125, 232, 0.12), transparent 60%);
+  z-index: -1;
+  pointer-events: none;
+}
+
+.sidebar .author__urls::after {
+  content: "";
+  position: absolute;
+  top: -14px;
+  left: calc(50% - 14px);
+  width: 0;
+  border-style: solid;
+  border-width: 0 14px 14px;
+  border-color: transparent transparent rgba(12, 18, 46, 0.82);
+  filter: drop-shadow(0 10px 18px rgba(#050b20, 0.45));
+  z-index: -2;
+
+  @include breakpoint($large) {
+    display: none;
+  }
+}
+
+.sidebar .author__urls li {
+  position: relative;
+  padding: 0.15rem 0;
+  font-size: $type-size-6;
+  color: lighten($high-contrast-text, 4%);
+}
+
+.sidebar .author__urls li + li {
+  margin-top: 0.15rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  padding-top: 0.5rem;
+}
+
+.sidebar .author__urls a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.25s ease, text-shadow 0.3s ease;
+}
+
+.sidebar .author__urls a:hover,
+.sidebar .author__urls a:focus {
+  color: mix($link-color, $primary-color, 65%);
+  text-shadow: 0 0 14px rgba($primary-color, 0.45);
+}
+
 @media (max-width: $medium) {
   .page__section {
     margin: 3rem 0;

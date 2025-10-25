@@ -168,9 +168,23 @@ body::after {
   }
 }
 
+.page__inner-wrap--spacious {
+  padding: clamp(2.5rem, 6vw, 4.5rem);
+}
+
+@media (max-width: 768px) {
+  .page__inner-wrap--spacious {
+    padding: clamp(1.85rem, 8vw, 3rem);
+  }
+}
+
 .page__content {
   padding: clamp(1.5rem, 4vw, 2.85rem);
   border-radius: 18px;
+}
+
+.page__content--spacious {
+  padding: clamp(2.15rem, 5vw, 3.6rem);
 }
 
 .page__content > :first-child {
@@ -329,11 +343,17 @@ blockquote {
 }
 
 .page__section-body .projects-grid {
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 50vw), 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
   justify-content: center;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1100px) {
+  .page__section-body .projects-grid {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+  }
+}
+
+@media (max-width: 720px) {
   .page__section-body .projects-grid {
     grid-template-columns: minmax(0, 1fr);
   }

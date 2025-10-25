@@ -304,6 +304,12 @@ blockquote {
   );
 }
 
+.page__section-body .grid__wrapper > .grid__item {
+  float: none;
+  width: 100%;
+  margin: 0;
+}
+
 .page__section-body--list .list__wrapper {
   grid-template-columns: 1fr;
 }

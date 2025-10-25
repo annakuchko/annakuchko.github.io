@@ -298,7 +298,10 @@ blockquote {
 }
 
 .page__section-body .grid__wrapper {
-  grid-template-columns: repeat(auto-fit, minmax(clamp(320px, 46vw, 560px), 1fr));
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(min(100%, clamp(380px, 42vw, 640px)), 1fr)
+  );
 }
 
 .page__section-body--list .list__wrapper {

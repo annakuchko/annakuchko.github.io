@@ -1,0 +1,72 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require "optparse"
+require "socket"
+require_relative "../lib/jekyll"
+
+options = { destination: "_site", port: 4000 }
+
+parser = OptionParser.new do |opts|
+  opts.banner = "Usage: jekyll [command] [options]"
+  opts.on("-dDEST", "--destination=DEST", "Destination directory (default: _site)") do |dest|
+    options[:destination] = dest
+  end
+  opts.on("-PPORT", "--port=PORT", Integer, "Port to serve on (default: 4000)") do |port|
+    options[:port] = port
+  end
+end
+
+command = ARGV.shift
+parser.parse!(ARGV) if command
+
+case command
+when "build"
+  Jekyll::Offline.build(options[:destination])
+  puts "Offline shim: generated placeholder site at #{options[:destination]}"
+when "serve", "liveserve"
+  Jekyll::Offline.build(options[:destination])
+  root = File.expand_path(options[:destination])
+  server = TCPServer.new("127.0.0.1", options[:port])
+  trap("INT") { server.close; exit }
+  puts "Offline shim: serving #{root} at http://127.0.0.1:#{options[:port]}"
+  loop do
+    socket = server.accept
+    Thread.new(socket) do |client|
+      begin
+        request_line = client.gets
+        next unless request_line
+        path = request_line.split(" ")[1] || "/"
+        path = "/" if path.empty?
+        relative_path = path == "/" ? "/index.html" : path
+        file_path = File.join(root, relative_path.sub(%r{^/+}, ""))
+        if File.file?(file_path)
+          body = File.binread(file_path)
+          headers = []
+          headers << "HTTP/1.1 200 OK"
+          headers << "Content-Length: #{body.bytesize}"
+          headers << "Content-Type: #{Jekyll::Offline.mime_type_for(file_path)}"
+          headers << "Connection: close"
+          client.write(headers.join("\r\n") + "\r\n\r\n")
+          client.write(body)
+        else
+          body = "Not Found"
+          client.write("HTTP/1.1 404 Not Found\r\nContent-Length: #{body.bytesize}\r\nConnection: close\r\n\r\n#{body}")
+        end
+      ensure
+        client.close
+      end
+    end
+  end
+else
+  puts <<~MSG
+    Offline Jekyll shim available commands:
+      jekyll build        # generates a placeholder site into _site
+      jekyll serve        # generates placeholder site then serves it with a tiny built-in server
+      jekyll liveserve    # alias for serve used by this project
+
+    This environment cannot download the real Jekyll gem. When network
+    access is restored run `ACADEMIC_PAGES_REAL_GEMS=true bundle install`
+    to install the upstream gems.
+  MSG
+end

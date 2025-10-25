@@ -1,0 +1,46 @@
+PATH
+  remote: vendor/local_gems/github-pages
+  specs:
+    github-pages (999.0.0)
+
+PATH
+  remote: vendor/local_gems/hawkins
+  specs:
+    hawkins (0.999.0)
+
+PATH
+  remote: vendor/local_gems/jekyll-feed
+  specs:
+    jekyll-feed (0.999.0)
+
+PATH
+  remote: vendor/local_gems/jekyll-sitemap
+  specs:
+    jekyll-sitemap (1.999.0)
+
+PATH
+  remote: vendor/local_gems/jekyll
+  specs:
+    jekyll (3.9.0)
+
+PATH
+  remote: vendor/local_gems/wdm
+  specs:
+    wdm (0.1.0)
+
+GEM
+  specs:
+
+PLATFORMS
+  x86_64-linux
+
+DEPENDENCIES
+  github-pages!
+  hawkins!
+  jekyll!
+  jekyll-feed!
+  jekyll-sitemap!
+  wdm!
+
+BUNDLED WITH
+   2.4.19

@@ -185,6 +185,34 @@ body::after {
 
 .page__content--spacious {
   padding: clamp(2.15rem, 5vw, 3.6rem);
+
+  > * + * {
+    margin-top: clamp(1.25rem, 3vw, 2.25rem);
+  }
+
+  p {
+    margin-bottom: clamp(1.15rem, 2.5vw, 1.75rem);
+    line-height: 1.8;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  ul,
+  ol {
+    margin: 0 0 clamp(1.15rem, 2.5vw, 1.75rem) clamp(1.5rem, 2vw, 2rem);
+    padding: 0;
+  }
+
+  ul:last-child,
+  ol:last-child {
+    margin-bottom: 0;
+  }
+
+  li {
+    line-height: 1.7;
+  }
 }
 
 .page__content > :first-child {

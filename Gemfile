@@ -11,10 +11,9 @@ source "https://rubygems.org"
 
 gem "github-pages", group: :jekyll_plugins
 
-# If you want to use Jekyll native, uncomment the line below.
-# To upgrade, run `bundle update`.
-
-# gem "jekyll"
+# Ensure the Jekyll executable is available even when GitHub Pages plugins
+# are not installed (for example in minimal container environments).
+gem "jekyll", "~> 3.9", group: :jekyll_plugins
 
 gem "wdm", "~> 0.1.0" if Gem.win_platform?
 

@@ -168,6 +168,19 @@ body::after {
   }
 }
 
+.page__content {
+  padding: clamp(1.5rem, 4vw, 2.85rem);
+  border-radius: 18px;
+}
+
+.page__content > :first-child {
+  margin-top: 0;
+}
+
+.page__content > :last-child {
+  margin-bottom: 0;
+}
+
 .archive__item::before,
 .feature__wrapper::before,
 .card::before {

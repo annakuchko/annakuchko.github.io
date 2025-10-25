@@ -67,8 +67,36 @@ body::after {
 }
 
 .masthead {
-  background: linear-gradient(135deg, rgba(12, 15, 24, 0.76), rgba(12, 15, 24, 0.4));
-  border-bottom: 1px solid rgba($dark-gray, 0.4);
+  padding: clamp(1rem, 2vw, 1.5rem) 0;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  backdrop-filter: none;
+}
+
+.masthead__inner-wrap {
+  width: min(1180px, 94vw);
+  margin: 0 auto;
+  padding: clamp(0.85rem, 2vw, 1.2rem) clamp(1.4rem, 3vw, 2.35rem);
+  border-radius: 28px;
+  border: 1px solid rgba(135, 240, 173, 0.32);
+  background: linear-gradient(135deg, rgba(12, 15, 28, 0.82), rgba(20, 32, 64, 0.6));
+  box-shadow: 0 32px 80px rgba(#050b20, 0.6), inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(32px) saturate(135%);
+  overflow: hidden;
+  position: relative;
+  z-index: 0;
+}
+
+.masthead__inner-wrap::before {
+  content: "";
+  position: absolute;
+  inset: 2px;
+  border-radius: inherit;
+  background: radial-gradient(circle at 10% 10%, rgba(135, 240, 173, 0.12), transparent 55%),
+              radial-gradient(circle at 90% 20%, rgba(93, 214, 255, 0.18), transparent 60%);
+  pointer-events: none;
+  z-index: -1;
 }
 
 .masthead__menu-item a,
@@ -270,11 +298,51 @@ blockquote {
 }
 
 .page__section-body .grid__wrapper {
-  grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(clamp(320px, 46vw, 560px), 1fr));
 }
 
 .page__section-body--list .list__wrapper {
   grid-template-columns: 1fr;
+}
+
+.sidebar {
+  position: relative;
+  margin-bottom: clamp(2rem, 4vw, 3rem);
+  padding: clamp(1.5rem, 3vw, 2.2rem);
+  border-radius: 28px;
+  border: 1px solid rgba(93, 214, 255, 0.24);
+  background: linear-gradient(145deg, rgba(8, 12, 32, 0.82), rgba(14, 20, 42, 0.58));
+  box-shadow: 0 28px 90px rgba(#050b20, 0.55), inset 0 0 0 1px rgba(255, 255, 255, 0.04);
+  overflow: hidden;
+}
+
+.sidebar::before {
+  content: "";
+  position: absolute;
+  inset: 3px;
+  border-radius: inherit;
+  background: radial-gradient(circle at 18% 20%, rgba(135, 240, 173, 0.18), transparent 55%),
+              radial-gradient(circle at 82% 18%, rgba(255, 125, 232, 0.15), transparent 60%),
+              radial-gradient(circle at 30% 88%, rgba(93, 214, 255, 0.12), transparent 65%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.sidebar > * {
+  position: relative;
+  z-index: 1;
+}
+
+.sidebar .author__avatar img {
+  border: 1px solid rgba(135, 240, 173, 0.25);
+  box-shadow: 0 18px 40px rgba(#050b20, 0.45);
+}
+
+.sidebar .author__bio,
+.sidebar .author__name,
+.sidebar .author__urls {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 @media (max-width: $medium) {

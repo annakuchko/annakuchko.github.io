@@ -3,6 +3,7 @@ layout: single
 title: "Services"
 permalink: /services/
 author_profile: true
+spacious: true
 excerpt: "Freelance data science, machine learning, and AI engineering services"
 ---
 

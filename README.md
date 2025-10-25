@@ -21,8 +21,8 @@ See more info at https://academicpages.github.io/
 1. Clone the repository and made updates as detailed above
 1. Make sure you have ruby-dev, bundler, and nodejs installed: `sudo apt install ruby-dev ruby-bundler nodejs`
 1. Run `bundle clean` to clean up the directory (no need to run `--force`)
-1. Run `bundle install --with jekyll_plugins` to install ruby dependencies (the `--with` flag ensures the `jekyll` executable is available inside minimal container environments—this repository also ships a `.bundle/config` that enables the group by default). If you get errors, delete Gemfile.lock and try again.
-1. Run `bundle exec jekyll liveserve` to generate the HTML and serve it from `localhost:4000` the local server will automatically rebuild and refresh the pages on change.
+1. Run `bundle install` to install ruby dependencies. In offline or proxied environments (like this repository's automated tests) Bundler will resolve against the shim gems in `vendor/local_gems` so the command finishes without contacting rubygems.org. Once you have open internet access you can delete that directory and rerun `ACADEMIC_PAGES_REAL_GEMS=true bundle install` to restore the official dependencies from rubygems.org.
+1. Run `bundle exec jekyll liveserve` to generate the HTML and serve it from `localhost:4000` the local server will automatically rebuild and refresh the pages on change. When the shim gems are in use this command serves a lightweight placeholder site from the generated `_site` directory so development workflows remain unblocked until the real gems can be installed.
 
 # Changelog -- bugfixes and enhancements
 
